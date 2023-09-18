@@ -1,0 +1,125 @@
+:root{
+    --main-brand-color: #297AE3;
+    --primary-color: #15171C;
+    --secondary-color: #2E3744;
+    --light-secondary-color: #2E3744;
+    --text-color: white;
+    --secondary-text-color: #B3B4B6;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 60px;
+    line-height: 115%;
+    text-shadow: 0.1em 0.1em #B3B4B6;
+}
+
+h2{
+    padding-bottom: 10px;
+    text-shadow: 0.1em 0.1em #B3B4B6;
+}
+
+section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+header {
+    position:sticky;
+    top: 0px;
+    background: var(--light-secondary-color);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+footer {
+    background: var(--light-secondary-color);
+    color: var(--text-color);
+}
+
+.mitte {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+nav ul li a {
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    position: relative;
+}
+nav a:hover{
+    color: var(--text-color);
+}
+nav a::after{
+    content: '';
+    height: 2px;
+    width: 0;
+    background: var(--main-brand-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 300ms ease-in-out;
+}
+nav a:hover::after{
+    width: 100%;
+}
+
+@media only screen and (max-width:1024px) {
+    nav ul {	
+        background: var(--light-secondary-color);
+        position: fixed;
+        padding: .6em;
+        bottom: 0; 
+    }
+      footer {
+        padding-bottom: 100px;
+    }
+} 
+
+@media only screen and (max-width:1199px) {
+    nav ul {
+        list-style: none;
+        gap: 100px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    nav ul {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background: var(--light-secondary-color);
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+    nav ul li a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        display: block;
+    }
+    body {
+        margin-left: 200px;
+    }
+} 
